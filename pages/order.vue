@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vs-navbar color="#f6b300" text-white square>
+    <vs-navbar color="#f6b300" text-white square fixed>
       <template #left>
         <div class="back-btn" @click="back">
           <i class='bx bx-arrow-back'></i> Назад
