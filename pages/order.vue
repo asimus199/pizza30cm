@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vs-navbar color="#f6b300" text-white square fixed>
+    <vs-navbar color="#f6b300" text-white square>
       <template #left>
         <div class="back-btn" @click="back">
           <i class='bx bx-arrow-back'></i> Назад
@@ -35,6 +35,7 @@
       <div class="order__item">
         <vs-input
             type="text"
+            phoneMask
             v-model="phone"
             placeholder="Введите ваш номер телефона"
             label="Телефон *"
@@ -122,6 +123,7 @@
   width: 100%;
   color: #444;
   padding: 13px 13px;
+  font-size: 16px !important;
 }
 .order .vs-input-parent {
   color: #444;

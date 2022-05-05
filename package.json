@@ -23,7 +23,7 @@
     "stripe": "^7.8.0",
     "uikit": "3.0.0",
     "vue-stripe-elements-plus": "^0.3.0",
-    "vuesax": "^4.0.1-alpha.25"
+    "vuesax": "git+https://github.com/asimus199/vuesax.git"
   },
   "devDependencies": {
     "vue-cli-plugin-apollo": "^0.21.0"
