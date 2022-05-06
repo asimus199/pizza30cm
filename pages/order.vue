@@ -222,7 +222,10 @@ export default {
         initData: window.Telegram.WebApp.initData,
         order: {
           items: this.selectedDishes,
-          price: this.price
+          price: this.price,
+          payMethod: this.payMethod,
+          address: this.address,
+          comment: this.comment
         }
       }).then(() => {
         window.Telegram.WebApp.MainButton.hideProgress();
