@@ -147,6 +147,7 @@
 import dishes from "../config/dishes";
 
 import { mapMutations } from 'vuex'
+import axios from 'axios'
 import ItemCount from "@/components/ItemCount";
 export default {
   components: {
@@ -215,7 +216,20 @@ export default {
       window.Telegram.WebApp.MainButton.onClick(onclick);
     },
     mainButtonOrderConfirmListener () {
+      window.Telegram.WebApp.MainButton.showProgress()
 
+      axios.post('https://keen-medovik-24c90e.netlify.app/.netlify/functions/server/order', {
+        initData: window.Telegram.WebApp.initData,
+        order: {
+          items: this.selectedDishes,
+          price: this.price
+        }
+      }).then(() => {
+        window.Telegram.WebApp.MainButton.hideProgress();
+        window.Telegram.WebApp.MainButton.close();
+      }).catch(e => {
+        window.Telegram.WebApp.MainButton.hideProgress();
+      })
     }
   },
   beforeDestroy() {
