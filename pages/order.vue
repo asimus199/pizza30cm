@@ -218,7 +218,7 @@ export default {
     mainButtonOrderConfirmListener () {
       window.Telegram.WebApp.MainButton.showProgress()
 
-      axios.post('https://keen-medovik-24c90e.netlify.app/.netlify/functions/server/order', {
+      axios.post('https://pizza30cm.herokuapp.com/order', {
         initData: window.Telegram.WebApp.initData,
         order: {
           items: this.selectedDishes,
