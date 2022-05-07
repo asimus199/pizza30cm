@@ -229,8 +229,21 @@ export default {
         }
       }).then(() => {
         window.Telegram.WebApp.MainButton.hideProgress();
-        window.Telegram.WebApp.MainButton.close();
+        this.$vs.notification({
+          color: 'success',
+          onDestroy: () => window.Telegram.WebApp.MainButton.close(),
+          position: 'bottom-center',
+          title: 'Успешно',
+          text: 'Заказ отправлен'
+        })
+
       }).catch(e => {
+        this.$vs.notification({
+          color: 'danger',
+          position: 'bottom-center',
+          title: 'Ошибка при оформление заказа',
+          text: 'Повторите попытку позже'
+        })
         window.Telegram.WebApp.MainButton.hideProgress();
       })
     }
