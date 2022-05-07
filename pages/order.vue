@@ -225,7 +225,8 @@ export default {
           price: this.price,
           payMethod: this.payMethod,
           address: this.address,
-          comment: this.comment
+          comment: this.comment,
+          phone: this.phone
         }
       }).then(() => {
         window.Telegram.WebApp.MainButton.hideProgress();
