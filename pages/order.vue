@@ -232,7 +232,7 @@ export default {
         window.Telegram.WebApp.MainButton.hideProgress();
         this.$vs.notification({
           color: 'success',
-          onDestroy: () => window.Telegram.WebApp.MainButton.close(),
+          onDestroy: () => window.Telegram.WebApp.close(),
           position: 'bottom-center',
           title: 'Успешно',
           text: 'Заказ отправлен'
